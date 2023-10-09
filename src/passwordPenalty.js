@@ -7,10 +7,16 @@
  */
 export default function penaltyPoints(password = "") {
   // The following line ensures, that password is always a string, like the number 128 -> string "128"
+  if (password === null) return 0;
   if (typeof password !== "string") password = String(password);
 
-  // * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-  // * * * INSERT YOUR CODE HERE * * * * * * * * * * * * * *
-  // * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-  //
+  let count = 0;
+  let Regex = /([a-z0-9])\1+/gi;
+  let arrOfMatching = password.match(Regex) || 0;
+  if (arrOfMatching === 0) return 0;
+  for (let char of arrOfMatching) {
+    if (char.length === 2) count += 1;
+    if (char.length > 2) count += 2;
+  }
+  return count;
 }
