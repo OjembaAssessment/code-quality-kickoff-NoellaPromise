@@ -6,15 +6,6 @@
 
 // FUNCTION 2
 
-// export default function processItems(items) {
-//   const processedItems = [];
-//   for (let item of items) {
-//     typeOf(item) === "Food" ? processedItems.push(item) : null;
-
-//     }
-//     return processedItems;
-//   }
-
 const processItems = (items) => {
   let processedItems = [];
   for (let item of items) {
