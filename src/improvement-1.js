@@ -5,12 +5,12 @@
  */
 
 // FUNCTION 1
-export default function cntrbt(ls) {
-  let cnt = 0;
-  for (let i = 0; i <= ls.length; i++) {
-    if (ls[i] == "R") {
-      cnt++;
-    }
+const numberOfOccurences = (word) => {
+  let count = 0;
+  for (const letter of word) {
+    letter === "R" ? count++ : null;
   }
-  return cnt;
-}
+  return count;
+};
+
+export default numberOfOccurences;
