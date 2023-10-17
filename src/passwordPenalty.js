@@ -8,7 +8,8 @@
 
 export default function penaltyPoints(password = "") {
   if (password === null || typeof password !== "string") return 0;
-
+  
+// Match and capture sequences of repeated lowercase letters and digits (case-insensitive)
   const regex = /([a-z0-9])\1+/gi;
   const matches = password.match(regex) || [];
 
